@@ -1,0 +1,58 @@
+ELMÉLET / 1
+
+Mi a különbség az Exception és a RuntimeException között?
+Check
+ezek azok, amiket a compiler maga is ellenőríz. Amikor eldobod, akkor vagy helyben kezelned kell, vagy meg kell jelölnöd a metódus throws deklarációjában, különben a kódod le se fog fordulni. Ezek azok, amik az Exception osztályból örökíthetőek le.
+Uncheck
+ezek értelemszerűen fordítási időben nem kerülnek ellenőrzésre. try/catch blokk nélkül használhatóak és még a fenti throws-al se kell jelezni őket. Ha ilyet akarsz létrehozni, akkor a RuntimeException osztályból kiindulva van rá lehetőséged. A java runtimeban szintén találhatóak még ilyenek, amik az Error osztályból származnak. Őket lehetne a harmadik típusnak venni, de mi magunk nem dobunk ilyeneket.
+
+ELMÉLET / 2.
+
+Hogyan tudunk egy kollekcióból bejárás közben elemeket törölni?
+
+ iteratoral bejátod  és a remove segítségével tudod törölni
+ iterator.remove
+ while (iterator.hasNext()) {
+                 RaceResult result = iterator.next();
+                 if (result.getPercentage() != 100) {
+                     iterator.remove();
+                 }
+
+
+
+
+          }
+
+ELMÉLET / 3. (5P)
+
+ Ismertesd röviden az OOP koncepciókat a Java-ban
+
+Az OOP lényege hogy egyszerűbben könnyeben kigészíthetően írunk kódot és jobban átekinthető az esteleges hibák továbbá dont reapit your self az az ismétlés nélkül
+polimorfizmus
+öröklődés
+apsztrakció
+kapszulázás
+
+
+ELMÉLET / 4. (5P)
+ Milyen adatszerkezet segítségével lehetne a gyakorlati feladatok alatt
+beolvasott meccsek adatait mindig dátum szerint rendezett sorrendben
+tárolni?
+Mit kellene a meccsek adatait tároló osztálynál változtatni, hogy képes
+legyen az adatszerkezettel együttműködni?
+
+
+Map-el lehet
+  vagy az alábbival :
+  nem teljesen értettem a kérdést ....
+int evszam = 0;
+
+try (BufferedReader reader = new BufferedReader(new FileReader("matches_all.txt"))) << beolvasás
+
+Scanner scanner = new Scanner(System.in);
+evszam = Integer.parseInt(scanner.nextLine());  <<< évszám szerinti mentés
+if (goldif.getYear() == evszam)
+
+Integer.parseInt << ezt kell változtatni
+
+
